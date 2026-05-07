@@ -6,9 +6,10 @@ systemd-timesyncd.
 ## Why this exists
 
 systemd-timesyncd does two things: it syncs time via NTP, and it saves
-the current clock to `/var/lib/systemd/clock` every 60 seconds and on
-shutdown. The kernel reads this file at boot to set a sane initial
-timestamp before any NTP sync has happened.
+the current clock to `/var/lib/systemd/timesync/clock` every 60 seconds
+and on shutdown. This file is read directly by the kernel at boot via
+systemd running as PID 1, to set a sane initial timestamp before any
+NTP sync has happened.
 
 When you replace systemd-timesyncd with chrony — which is common on
 Raspberry Pi and other single-board computers for better accuracy,
@@ -48,8 +49,8 @@ sudo apt install timesave
 
 - `timesave.timer` — fires every 60 seconds once chrony is running,
   and waits for the hardware clock to be loaded before starting
-- `timesave.service` — touches `/var/lib/systemd/clock` to update
-  its modification time, which the kernel reads on next boot
+- `timesave.service` — touches `/var/lib/systemd/timesync/clock` to
+  update its modification time, which systemd reads on next boot
 - `timesave-shutdown.service` — saves the clock on shutdown so the
   most recent timestamp is always preserved
 
