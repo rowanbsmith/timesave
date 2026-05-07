@@ -28,15 +28,7 @@ jobs:
       - name: Set up reprepro conf
         run: |
           mkdir -p gh-pages/conf
-          cat > gh-pages/conf/distributions << 'REPOEOF'
-Origin: Rowan Smith
-Label: timesave
-Codename: stable
-Architectures: armhf arm64 all
-Components: main
-Description: timesave apt repository
-SignWith: no
-REPOEOF
+          printf 'Origin: Rowan Smith\nLabel: timesave\nCodename: stable\nArchitectures: armhf arm64 all\nComponents: main\nDescription: timesave apt repository\nSignWith: no\n' > gh-pages/conf/distributions
 
       - name: Add package to repo
         run: |
