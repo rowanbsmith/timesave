@@ -6,7 +6,7 @@ After=local-fs.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/touch /var/lib/systemd/clock
+ExecStart=/usr/bin/touch /var/lib/systemd/timesync/clock
 RemainAfterExit=yes
 
 [Install]
