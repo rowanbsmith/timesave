@@ -35,12 +35,13 @@ jobs:
           Architectures: armhf arm64 all
           Components: main
           Description: timesave apt repository
+          SignWith: no
           REPOEOF
 
       - name: Add package to repo
         run: |
           cd gh-pages
-          reprepro --no-sign includedeb stable ../timesave_*.deb
+          reprepro includedeb stable ../timesave_*.deb
 
       - name: Push updated repo
         run: |
