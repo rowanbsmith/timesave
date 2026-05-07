@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+case "$1" in
+    remove|purge)
+        systemctl stop timesave.timer || true
+        systemctl disable timesave.timer || true
+        systemctl disable timesave-shutdown.service || true
+        systemctl daemon-reload
+        ;;
+esac
+#DEBHELPER#
+exit 0

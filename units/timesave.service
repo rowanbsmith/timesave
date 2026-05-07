@@ -1,0 +1,15 @@
+[Unit]
+Description=Save current clock to disk
+DefaultDependencies=no
+After=local-fs.target time-set.target chronyd.service
+Requires=chronyd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/touch /var/lib/systemd/clock
+PrivateTmp=yes
+ProtectSystem=strict
+ReadWritePaths=/var/lib/systemd
+
+[Install]
+WantedBy=multi-user.target

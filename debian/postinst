@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+case "$1" in
+    configure)
+        systemctl daemon-reload
+        systemctl enable timesave.timer
+        systemctl start timesave.timer || true
+        systemctl enable timesave-shutdown.service
+        for unit in timesave.service timesave.timer timesave-shutdown.service; do
+            if [ -f "/etc/systemd/system/$unit" ]; then
+                echo "Warning: /etc/systemd/system/$unit exists and will shadow the package version." >&2
+            fi
+        done
+        ;;
+esac
+#DEBHELPER#
+exit 0

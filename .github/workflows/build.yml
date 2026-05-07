@@ -1,0 +1,52 @@
+name: Build and publish apt repository
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build deps
+        run: sudo apt-get install -y debhelper devscripts reprepro
+
+      - name: Build package
+        run: |
+          dpkg-buildpackage -us -uc -b
+          mv ../timesave_*.deb ./
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Set up reprepro conf
+        run: |
+          mkdir -p gh-pages/conf
+          cat > gh-pages/conf/distributions << REPOEOF
+          Origin: Rowan Smith
+          Label: timesave
+          Codename: stable
+          Architectures: armhf arm64 all
+          Components: main
+          Description: timesave apt repository
+          REPOEOF
+
+      - name: Add package to repo
+        run: |
+          cd gh-pages
+          reprepro --no-sign includedeb stable ../timesave_*.deb
+
+      - name: Push updated repo
+        run: |
+          cd gh-pages
+          git config user.name "github-actions"
+          git config user.email "rowan@smith.gen.nz"
+          git add -A
+          git commit -m "Publish ${{ github.ref_name }}"
+          git push

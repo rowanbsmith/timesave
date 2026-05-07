@@ -1,0 +1,16 @@
+Source: timesave
+Section: utils
+Priority: optional
+Maintainer: Rowan Smith <rowan@smith.gen.nz>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Homepage: https://github.com/rowanbsmith/timesave
+Rules-Requires-Root: no
+
+Package: timesave
+Architecture: all
+Depends: ${misc:Depends}, systemd, chrony
+Description: Persist system clock to disk
+ Replicates the clock-saving behaviour of systemd-timesyncd for systems
+ using chrony as the NTP daemon. Writes /var/lib/systemd/clock every 60
+ seconds and on shutdown, ensuring an accurate boot-time timestamp.
