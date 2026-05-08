@@ -1,0 +1,19 @@
+Package: timesave
+Version: 1.0.0-1
+Architecture: all
+Maintainer: Rowan Smith <rowan@smith.gen.nz>
+Installed-Size: 19
+Depends: systemd, chrony
+Homepage: https://github.com/rowanbsmith/timesave
+Priority: optional
+Section: utils
+Filename: pool/main/t/timesave/timesave_1.0.0-1_all.deb
+Size: 2466
+SHA256: 6c5b3743affd6b093a48c9027bac77e324beb27af390fc83ebb95396b13cdbb9
+SHA1: 85736f6d6e53e842200e7a2279cf7e3b5d5945f3
+MD5sum: 1c0f207732583d49bb21d21e3aef4475
+Description: Persist system clock to disk
+ Replicates the clock-saving behaviour of systemd-timesyncd for systems
+ using chrony as the NTP daemon. Writes /var/lib/systemd/clock every 60
+ seconds and on shutdown, ensuring an accurate boot-time timestamp.
+

@@ -1,0 +1,38 @@
+Origin: Rowan Smith
+Label: timesave
+Suite: stable
+Codename: stable
+Date: Fri, 08 May 2026 05:11:58 UTC
+Architectures: armhf arm64 amd64
+Components: main
+Description: timesave apt repository
+MD5Sum:
+ 39865971a79671dcd22a4b1eda13734f 709 main/binary-armhf/Packages
+ 54f9909b5aa0f6bf69aabb9979565151 492 main/binary-armhf/Packages.gz
+ d97de923aed826c48353cc494f1160f9 125 main/binary-armhf/Release
+ 39865971a79671dcd22a4b1eda13734f 709 main/binary-arm64/Packages
+ 54f9909b5aa0f6bf69aabb9979565151 492 main/binary-arm64/Packages.gz
+ a3272ad7d45105fd96910e0d0e83e40a 125 main/binary-arm64/Release
+ 39865971a79671dcd22a4b1eda13734f 709 main/binary-amd64/Packages
+ 54f9909b5aa0f6bf69aabb9979565151 492 main/binary-amd64/Packages.gz
+ 0725fbf326949481e5417499a1356d55 125 main/binary-amd64/Release
+SHA1:
+ 6ba7a9e299070fe04cacad5862684bb18ada7270 709 main/binary-armhf/Packages
+ 781b341742b9943e0b5fd8e4e689ffe08e5ce3ac 492 main/binary-armhf/Packages.gz
+ 3fa5fbd7b8316fbe6b77cfae16ce823f6f81a26a 125 main/binary-armhf/Release
+ 6ba7a9e299070fe04cacad5862684bb18ada7270 709 main/binary-arm64/Packages
+ 781b341742b9943e0b5fd8e4e689ffe08e5ce3ac 492 main/binary-arm64/Packages.gz
+ e426a878152b92d430d7379b89c165e2ae97be3b 125 main/binary-arm64/Release
+ 6ba7a9e299070fe04cacad5862684bb18ada7270 709 main/binary-amd64/Packages
+ 781b341742b9943e0b5fd8e4e689ffe08e5ce3ac 492 main/binary-amd64/Packages.gz
+ b212663ac227b2cf8549d71d798bb54dc4af5b69 125 main/binary-amd64/Release
+SHA256:
+ 454796213fc71eca9c570a720a4c2fa5b433485af978f0bebf3ce769850b97d5 709 main/binary-armhf/Packages
+ eb2cb8d3faabf5ce6b4c56c8f90e9a3542b9ffdfc4ba52dcb59810f7f131c1f8 492 main/binary-armhf/Packages.gz
+ 87de9bbc279628e7e9ff521d681fdf3b2361f458e10ecb9dc703b07440b2da57 125 main/binary-armhf/Release
+ 454796213fc71eca9c570a720a4c2fa5b433485af978f0bebf3ce769850b97d5 709 main/binary-arm64/Packages
+ eb2cb8d3faabf5ce6b4c56c8f90e9a3542b9ffdfc4ba52dcb59810f7f131c1f8 492 main/binary-arm64/Packages.gz
+ 29dafcd68d791308aa2d41b2eb1d6eb9411c69e366ff5a7f16e01af9b0abfa19 125 main/binary-arm64/Release
+ 454796213fc71eca9c570a720a4c2fa5b433485af978f0bebf3ce769850b97d5 709 main/binary-amd64/Packages
+ eb2cb8d3faabf5ce6b4c56c8f90e9a3542b9ffdfc4ba52dcb59810f7f131c1f8 492 main/binary-amd64/Packages.gz
+ de7b0e57556cbab57400fdedd7db16b2c8a59ee02627998fb4df22cae21f43bc 125 main/binary-amd64/Release

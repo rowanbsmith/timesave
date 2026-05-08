@@ -1,0 +1,6 @@
+Archive: stable
+Component: main
+Origin: Rowan Smith
+Label: timesave
+Architecture: arm64
+Description: timesave apt repository
